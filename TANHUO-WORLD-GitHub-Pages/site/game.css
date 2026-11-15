@@ -1,0 +1,68 @@
+:root {
+  color-scheme: dark;
+  font-family: ui-monospace, "Courier New", monospace;
+  color: #fff1d4;
+  background: #1c3029;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+#play-area { position: relative; overflow: hidden; isolation: isolate; }
+#game, .welcome, .rotation { position: absolute; inset: 0; }
+#game { z-index: 0; }
+.welcome { z-index: 2; }
+.welcome, .rotation {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  overflow: auto;
+  background:
+    radial-gradient(circle, #9ab57635 1px, transparent 1px) 0 0 / 16px 16px,
+    linear-gradient(145deg, #324a34, #1c3029 70%);
+}
+.ticket {
+  text-align: center;
+  width: min(480px, 100%);
+  background: #293b2e;
+  padding: clamp(14px, 4vh, 32px) 18px;
+  border: 3px solid #dfb872;
+  box-shadow: 0 0 0 4px #5b422f, 0 8px 0 #18231d;
+}
+.emblem { width: clamp(40px, 12vh, 64px); height: auto; image-rendering: pixelated; }
+h1, h2 { margin: 6px 0 8px; text-transform: uppercase; letter-spacing: .06em; }
+h1 { font-size: clamp(1.38rem, 4.5vw, 2.35rem); }
+h2 { font-size: 1.4rem; }
+p { margin: 0; line-height: 1.45; }
+.intro { color: #f6e1b4; font-size: .92rem; }
+button {
+  margin: 16px 0 10px;
+  min-height: 44px;
+  padding: 0 26px;
+  border: 2px solid #271b18;
+  box-shadow: 0 3px 0 #271b18;
+  background: #efbe72;
+  color: #262019;
+  font: 700 1rem ui-monospace, "Courier New", monospace;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+button:disabled { opacity: .76; cursor: wait; }
+button:focus-visible, a:focus-visible { outline: 3px solid #fff1d4; outline-offset: 3px; }
+.status { font-size: .79rem; color: #e1d0ad; min-height: 1.25em; }
+.rotation { display: none; z-index: 4; }
+.phone { display: inline-block; font-size: 2.4rem; color: #efbe72; margin-bottom: 6px; }
+footer { text-align: right; padding: 2px 8px; font-size: .64rem; }
+footer a { color: #c3d3b1; }
+@media (orientation: portrait) {
+  .rotation { display: grid; }
+  #game, .welcome { visibility: hidden; }
+}
