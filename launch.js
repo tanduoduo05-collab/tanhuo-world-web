@@ -28,7 +28,7 @@ start.addEventListener("click", async () => {
     await loadRuntime();
     await window.cheerpjInit({ version: 17, status: "splash" });
     window.cheerpjCreateDisplay(-1, -1, game);
-    const jar = new URL("./tanhuo-world.jar", window.location.href);
+    const jar = new URL("./tanhuo-world-controls.jar", window.location.href);
     const width = String(game.clientWidth);
     const height = String(game.clientHeight);
     welcome.hidden = true;
