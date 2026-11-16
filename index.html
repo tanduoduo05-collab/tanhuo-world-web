@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1c3029">
   <title>Tanhuo World</title>
   <link rel="stylesheet" href="./game.css">
-  <script type="module" src="./launch.js?v=split-controls3"></script>
+  <script type="module" src="./launch.js?v=cinema-titles6"></script>
 </head>
 <body>
   <main id="play-area">
@@ -15,7 +15,13 @@
       <div class="ticket">
         <img class="emblem" src="./emblem.png" width="64" height="64" alt="">
         <h1 id="title">Tanhuo World</h1>
-        <p class="intro">Grow your garden. Explore the Wildflower Trail.</p>
+        <p class="intro" id="intro">Grow your garden. Explore the Wildflower Trail.</p>
+        <label class="status">Language / 语言
+          <select id="language">
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+          </select>
+        </label>
         <button type="button" id="start">Play game</button>
         <p id="status" class="status" role="status">Use the touch buttons or the arrow keys.</p>
       </div>
@@ -23,8 +29,8 @@
     <aside class="rotation" aria-label="Landscape required">
       <div class="ticket">
         <span class="phone" aria-hidden="true">&#8635;</span>
-        <h2>Rotate to play</h2>
-        <p>Turn your phone sideways. If the screen stays upright, turn off rotation lock.</p>
+        <h2 id="rotate-title">Rotate to play</h2>
+        <p id="rotate-help">Turn your phone sideways. If the screen stays upright, turn off rotation lock.</p>
       </div>
     </aside>
   </main>
